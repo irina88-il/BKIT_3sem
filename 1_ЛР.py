@@ -78,9 +78,9 @@ def main():
     if len_roots == 0 or a == 0 :
         print('Нет корней')
     elif len_roots == 2:
-        print('Два корня: {} и {}'.format(roots[0], roots[1]))
+        print('Два корня: {:.2f} и {:.2f}'.format(roots[0], roots[1]))
     elif len_roots == 4:
-        print('Четыре корня: {}, {}, {} и {}'.format(roots[0], roots[1], roots[2], roots[3]))
+        print('Четыре корня: {:.2f}, {:.2f}, {:.2f} и {:.2f}'.format(roots[0], roots[1], roots[2], roots[3]))
     
 
 # Если сценарий запущен из командной строки

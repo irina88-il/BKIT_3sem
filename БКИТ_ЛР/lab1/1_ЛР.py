@@ -38,29 +38,33 @@ def get_roots(a, b, c):
     Returns:
         list[float]: Список корней
     '''
-    result = []
-    D = b*b - 4*a*c
-    if D == 0.0:
-        y = -b / (2.0*a)
-        if y >= 0:
-            root_1 = math.sqrt(y)
-            root_2 = -math.sqrt(y)
-            result.append(root_1)
-            result.append(root_2)      
-    elif D > 0.0:
-        sqD = math.sqrt(D)
-        y1 = (-b + sqD) / (2.0*a)
-        y2 = (-b - sqD) / (2.0*a)
-        if (y1 >= 0):
-            root1_1 = math.sqrt(y1)
-            root1_2 = -math.sqrt(y1)
-            result.append(root1_1)
-            result.append(root1_2)
-        if (y2 >= 0):
-            root2_1 = math.sqrt(y2)
-            root2_2 = -math.sqrt(y2)
-            result.append(root2_1)
-            result.append(root2_2)
+    try:
+        result = []
+        D = b*b - 4*a*c
+        if D == 0.0:
+            y = -b / (2.0*a)
+            if y >= 0:
+                root_1 = math.sqrt(y)
+                root_2 = -math.sqrt(y)
+                result.append(root_1)
+                result.append(root_2)      
+        elif D > 0.0:
+            sqD = math.sqrt(D)
+            y1 = (-b + sqD) / (2.0*a)
+            y2 = (-b - sqD) / (2.0*a)
+            if (y1 >= 0):
+                root1_1 = math.sqrt(y1)
+                root1_2 = -math.sqrt(y1)
+                result.append(root1_1)
+                result.append(root1_2)
+            if (y2 >= 0):
+                root2_1 = math.sqrt(y2)
+                root2_2 = -math.sqrt(y2)
+                result.append(root2_1)
+                result.append(root2_2)
+                
+    except ZeroDivisionError:
+            print("Коэффициент А не может быть равен нулю.")
     return result
     
 def main():
@@ -74,7 +78,7 @@ def main():
     roots = get_roots(a,b,c)
     # Вывод корней
     len_roots = len(roots)
-    if len_roots == 0 or a == 0 :
+    if len_roots == 0 and a != 0:
         print('Нет корней')
     elif len_roots == 2:
         print('Два корня: {:.2f} и {:.2f}'.format(roots[0], roots[1]))
@@ -88,3 +92,4 @@ if __name__ == "__main__":
 
 # Пример запуска
 # qr.py 1 0 -4
+

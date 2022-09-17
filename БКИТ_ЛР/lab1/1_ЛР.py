@@ -25,9 +25,6 @@ def get_coef(index, prompt):
                 break
             except ValueError:
                 print("Вы ввели не число. Попробуйте снова. ")
-            except ZeroDivisionError:
-                coef = 0
-                print("Коэффиниент A не равен нулю, попробуйте снова")
     return coef
 
 
